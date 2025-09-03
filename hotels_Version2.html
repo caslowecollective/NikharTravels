@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Nikhar Travels - Hotel Search Results</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Spline+Sans:wght@400;500;700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #F97316;--secondary-color: #000000;--background-color: #FFFFFF;--text-primary: #1F2937;--text-secondary: #6B7280;--accent-color: #EA580C;}
+      body {
+        font-family: 'Spline Sans', sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-primary);
+      }
+      .nav-link {
+        padding: 0.5rem 1rem;
+        border-radius: 9999px;
+        transition: background 0.2s, color 0.2s;
+      }
+      .nav-link:hover, .nav-link.active {
+        color: var(--primary-color);
+        background: var(--secondary-color)/10;
+      }
+      .form-input {
+        transition: all 0.3s ease-in-out;
+      }
+      .form-input:focus-within {
+        box-shadow: 0 0 0 2px var(--primary-color);
+      }
+      .card {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+      .btn-primary {
+        background: var(--primary-color);
+        color: white;
+        padding: 0.5rem 1.5rem;
+        border-radius: 9999px;
+        font-weight: 600;
+        transition: background 0.3s;
+      }
+      .btn-primary:hover {
+        background: var(--accent-color);
+      }
+      .sort-pill {
+        cursor:pointer;
+        background: #f3f4f6;
+        color: #4b5563;
+        padding: 0.5rem 1rem;
+        border-radius: 9999px;
+        margin-right: 0.25rem;
+        margin-bottom: 0.25rem;
+        transition: all 0.3s;
+        font-size: 0.95rem;
+      }
+      .sort-pill.active {
+        background: var(--primary-color);
+        color: white;
+        font-weight: 600;
+      }
+    </style>
+</head>
+<body class="bg-[var(--background-color)] text-[var(--text-primary)]">
+<div class="relative flex size-full min-h-screen flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 bg-[var(--background-color)]/80 px-10 py-4 backdrop-blur-sm">
+<div class="flex items-center gap-10">
+<div class="flex items-center gap-3 text-[var(--secondary-color)]">
+<svg class="h-8 w-8 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
+</svg>
+<h2 class="text-xl font-bold">Nikhar Travels</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="nav-link" href="index.html">Home</a>
+<a class="nav-link" href="flights.html">Flights</a>
+<a class="nav-link active" href="hotels.html">Hotels</a>
+<a class="nav-link" href="destinations.html">Destinations</a>
+<a class="nav-link" href="booking.html">Booking</a>
+<a class="nav-link" href="aboutus.html">About Us</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[var(--text-secondary)]"> search </span>
+<input class="form-input w-full rounded-full border border-gray-200 bg-gray-100 px-4 py-2 pl-10 text-sm text-[var(--text-primary)] placeholder:text-[var(--text-secondary)] focus:border-[var(--primary-color)] focus:outline-none focus:ring-0" placeholder="Search destinations..." value=""/>
+</div>
+<button class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 text-[var(--text-secondary)] hover:text-black hover:bg-gray-200 transition-colors">
+<span class="material-symbols-outlined"> language </span>
+</button>
+<div class="h-10 w-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAdNOPxlJ0qVuOsi1-NU4HGRYgjXjNxkUcMwX5fa32tQRomrPa7MdRsQsIBTpHVFEB-OdSvMZYtF9KCnGqJvulsm0wYC22SjiXiXo2j2UBDtUi1LmFBiK5V-oT1_y5ZtFvwRCnu_P5b_0m1Ao8v1AgkyBuYg1kDhgnbFi4auDMe6MJm4ngnx4Rr1w05MrH2qVFSh3wrDY7WCZcqh5wku3BTeeKvHPif5qezgjbLfIKHwnwyPsztQf6XYBP8YG3LsgTHwpeYFCubFpiG");'></div>
+</div>
+</header>
+<main class="flex flex-1 container mx-auto px-4 py-8">
+<aside class="w-80 flex-shrink-0 pr-8 hidden lg:block">
+<!-- ... filter code as in your source ... -->
+</aside>
+<div class="flex-1">
+<div class="flex flex-wrap justify-between items-center gap-4 mb-6">
+<h1 class="text-4xl font-bold text-black">Hotels in <span class="text-[var(--primary-color)]">Mumbai</span></h1>
+<div class="flex flex-wrap items-center gap-2">
+<span class="text-sm text-[var(--text-secondary)]">Sort by:</span>
+<div class="sort-pill active">Recommended</div>
+<div class="sort-pill">Price (Low to High)</div>
+<div class="sort-pill">Rating (High to Low)</div>
+</div>
+</div>
+<div class="grid gap-6">
+<!-- ... hotel cards as in your source ... -->
+</div>
+</div>
+</main>
+<footer class="bg-black text-white mt-10">
+<nav class="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-8 pt-8">
+<a class="text-gray-400 hover:text-[var(--primary-color)]" href="index.html">Home</a>
+<a class="text-gray-400 hover:text-[var(--primary-color)]" href="destinations.html">Destinations</a>
+<a class="text-gray-400 hover:text-[var(--primary-color)]" href="flights.html">Flights</a>
+<a class="text-gray-400 hover:text-[var(--primary-color)]" href="hotels.html">Hotels</a>
+<a class="text-gray-400 hover:text-[var(--primary-color)]" href="booking.html">Booking</a>
+<a class="text-gray-400 hover:text-[var(--primary-color)]" href="aboutus.html">About Us</a>
+</nav>
+<p class="text-sm text-gray-500 pb-8">© 2024 Nikhar Travels. All rights reserved.</p>
+</footer>
+</div>
+</body>
+</html>
