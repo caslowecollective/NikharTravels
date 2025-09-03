@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html><head>
 <meta charset="utf-8"/>
-<title>Nikhar Travels - Hotel Search Results</title>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
 <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Spline+Sans:wght@400;500;700" onload="this.rel='stylesheet'" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>Nikhar Travels - Hotel Search Results</title>
 <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <style type="text/tailwindcss">
@@ -16,15 +13,6 @@
         font-family: 'Spline Sans', sans-serif;
         background-color: var(--background-color);
         color: var(--text-primary);
-      }
-      .nav-link {
-        padding: 0.5rem 1rem;
-        border-radius: 9999px;
-        transition: background 0.2s, color 0.2s;
-      }
-      .nav-link:hover, .nav-link.active {
-        color: var(--primary-color);
-        background: var(--secondary-color)/10;
       }
       .form-input {
         transition: all 0.3s ease-in-out;
@@ -40,31 +28,13 @@
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       }
       .btn-primary {
-        background: var(--primary-color);
-        color: white;
-        padding: 0.5rem 1.5rem;
-        border-radius: 9999px;
-        font-weight: 600;
-        transition: background 0.3s;
-      }
-      .btn-primary:hover {
-        background: var(--accent-color);
+        @apply bg-[var(--primary-color)] text-white py-2 px-6 rounded-full hover:bg-[var(--accent-color)] transition-colors duration-300 ease-in-out font-semibold;
       }
       .sort-pill {
-        cursor:pointer;
-        background: #f3f4f6;
-        color: #4b5563;
-        padding: 0.5rem 1rem;
-        border-radius: 9999px;
-        margin-right: 0.25rem;
-        margin-bottom: 0.25rem;
-        transition: all 0.3s;
-        font-size: 0.95rem;
+        @apply cursor-pointer bg-gray-100 text-gray-600 px-4 py-2 rounded-full hover:bg-gray-200 hover:text-gray-800 transition-all duration-300 ease-in-out;
       }
-      .sort-pill.active {
-        background: var(--primary-color);
-        color: white;
-        font-weight: 600;
+       .sort-pill.active {
+        @apply bg-[var(--primary-color)] text-white font-semibold;
       }
     </style>
 </head>
@@ -79,12 +49,12 @@
 <h2 class="text-xl font-bold">Nikhar Travels</h2>
 </div>
 <nav class="hidden md:flex items-center gap-8">
-<a class="nav-link" href="index.html">Home</a>
-<a class="nav-link" href="flights.html">Flights</a>
-<a class="nav-link active" href="hotels.html">Hotels</a>
-<a class="nav-link" href="destinations.html">Destinations</a>
-<a class="nav-link" href="booking.html">Booking</a>
-<a class="nav-link" href="aboutus.html">About Us</a>
+<a class="text-gray-600 hover:text-black transition-colors text-sm font-medium" href="#">Home</a>
+<a class="text-gray-600 hover:text-black transition-colors text-sm font-medium" href="#">Flights</a>
+<a class="text-black font-bold text-sm" href="#">Hotels</a>
+<a class="text-gray-600 hover:text-black transition-colors text-sm font-medium" href="#">Packages</a>
+<a class="text-gray-600 hover:text-black transition-colors text-sm font-medium" href="#">Cruises</a>
+<a class="text-gray-600 hover:text-black transition-colors text-sm font-medium" href="#">Contact</a>
 </nav>
 </div>
 <div class="flex items-center gap-4">
@@ -100,7 +70,105 @@
 </header>
 <main class="flex flex-1 container mx-auto px-4 py-8">
 <aside class="w-80 flex-shrink-0 pr-8 hidden lg:block">
-<!-- ... filter code as in your source ... -->
+<div class="sticky top-28">
+<h2 class="text-2xl font-bold mb-6 text-black">Filters</h2>
+<div class="space-y-6">
+<div>
+<label class="text-sm font-medium text-[var(--text-secondary)]" for="destination">Destination</label>
+<div class="relative mt-2 form-input rounded-xl bg-gray-100">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-lg text-[var(--text-secondary)]"> location_on </span>
+<input class="w-full bg-transparent pl-10 pr-4 py-3 rounded-xl border-none focus:ring-0 text-black" id="destination" placeholder="Mumbai"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="text-sm font-medium text-[var(--text-secondary)]" for="check-in">Check-in</label>
+<div class="relative mt-2 form-input rounded-xl bg-gray-100">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-lg text-[var(--text-secondary)]"> calendar_today </span>
+<input class="w-full bg-transparent pl-10 pr-4 py-3 rounded-xl border-none focus:ring-0 text-black" id="check-in" placeholder="Select Date" type="text"/>
+</div>
+</div>
+<div>
+<label class="text-sm font-medium text-[var(--text-secondary)]" for="check-out">Check-out</label>
+<div class="relative mt-2 form-input rounded-xl bg-gray-100">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-lg text-[var(--text-secondary)]"> calendar_today </span>
+<input class="w-full bg-transparent pl-10 pr-4 py-3 rounded-xl border-none focus:ring-0 text-black" id="check-out" placeholder="Select Date" type="text"/>
+</div>
+</div>
+</div>
+<div>
+<label class="text-sm font-medium text-[var(--text-secondary)]" for="guests">Guests</label>
+<div class="relative mt-2 form-input rounded-xl bg-gray-100">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-lg text-[var(--text-secondary)]"> group </span>
+<input class="w-full bg-transparent pl-10 pr-4 py-3 rounded-xl border-none focus:ring-0 text-black" id="guests" placeholder="2 adults, 1 room"/>
+</div>
+</div>
+<div>
+<h3 class="text-sm font-medium text-[var(--text-secondary)] mb-2">Price Range</h3>
+<div class="relative h-1 w-full rounded-full bg-gray-200 pt-1.5 mt-4">
+<div class="absolute h-1 rounded-full bg-[var(--primary-color)]" style="left: 10%; width: 70%;"></div>
+<div class="absolute -top-1.5" style="left: 10%;">
+<div class="w-4 h-4 rounded-full bg-white ring-2 ring-[var(--primary-color)]"></div>
+<span class="absolute top-5 left-1/2 -translate-x-1/2 text-xs text-[var(--text-secondary)]">$100</span>
+</div>
+<div class="absolute -top-1.5" style="left: 80%;">
+<div class="w-4 h-4 rounded-full bg-white ring-2 ring-[var(--primary-color)]"></div>
+<span class="absolute top-5 left-1/2 -translate-x-1/2 text-xs text-[var(--text-secondary)]">$1000</span>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-sm font-medium text-[var(--text-secondary)] mb-4">Hotel Class</h3>
+<div class="flex justify-between">
+<div class="flex items-center gap-1 text-[var(--primary-color)] cursor-pointer p-2 rounded-md hover:bg-gray-100 transition-colors">
+<span class="material-symbols-outlined text-base">star</span>
+<span class="text-xs font-medium text-black">5</span>
+</div>
+<div class="flex items-center gap-1 text-[var(--primary-color)] cursor-pointer p-2 rounded-md hover:bg-gray-100 transition-colors">
+<span class="material-symbols-outlined text-base">star</span>
+<span class="text-xs font-medium text-black">4</span>
+</div>
+<div class="flex items-center gap-1 text-[var(--primary-color)] cursor-pointer p-2 rounded-md hover:bg-gray-100 transition-colors">
+<span class="material-symbols-outlined text-base">star</span>
+<span class="text-xs font-medium text-black">3</span>
+</div>
+<div class="flex items-center gap-1 text-[var(--primary-color)] cursor-pointer p-2 rounded-md hover:bg-gray-100 transition-colors">
+<span class="material-symbols-outlined text-base">star</span>
+<span class="text-xs font-medium text-black">2</span>
+</div>
+<div class="flex items-center gap-1 text-[var(--primary-color)] cursor-pointer p-2 rounded-md hover:bg-gray-100 transition-colors">
+<span class="material-symbols-outlined text-base">star</span>
+<span class="text-xs font-medium text-black">1</span>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-sm font-medium text-[var(--text-secondary)] mb-2">Amenities</h3>
+<div class="grid grid-cols-2 gap-x-4 gap-y-2">
+<label class="flex items-center gap-2 text-sm text-gray-700">
+<input checked="" class="h-4 w-4 rounded border-gray-300 bg-transparent text-[var(--primary-color)] focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+                      Free Wi-Fi
+                    </label>
+<label class="flex items-center gap-2 text-sm text-gray-700">
+<input checked="" class="h-4 w-4 rounded border-gray-300 bg-transparent text-[var(--primary-color)] focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+                      Swimming Pool
+                    </label>
+<label class="flex items-center gap-2 text-sm text-gray-700">
+<input class="h-4 w-4 rounded border-gray-300 bg-transparent text-[var(--primary-color)] focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+                      Restaurant
+                    </label>
+<label class="flex items-center gap-2 text-sm text-gray-700">
+<input class="h-4 w-4 rounded border-gray-300 bg-transparent text-[var(--primary-color)] focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+                      Spa
+                    </label>
+<label class="flex items-center gap-2 text-sm text-gray-700">
+<input class="h-4 w-4 rounded border-gray-300 bg-transparent text-[var(--primary-color)] focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+                      Fitness Center
+                    </label>
+</div>
+</div>
+</div>
+</div>
 </aside>
 <div class="flex-1">
 <div class="flex flex-wrap justify-between items-center gap-4 mb-6">
@@ -113,21 +181,115 @@
 </div>
 </div>
 <div class="grid gap-6">
-<!-- ... hotel cards as in your source ... -->
+<div class="card flex flex-col md:flex-row items-stretch bg-white border border-gray-200 rounded-2xl overflow-hidden">
+<div class="md:w-1/3 w-full h-64 md:h-auto bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuASomXOxOCLu9znALUg85DiOdBFtYTxLZrH3UoYUv7j8I4phcP345wJd1GHSbRbVrXseO4JAOB8m2b7frdMxf9U2Wfm34IqiycJfcdJGvWikZQM04T2VBVsqlsq5xxcNLxhzI3mpseOw4pkJpPIsknhNNvE37KI5F1dFM3_WhWYyP6O4MZBVQo6WsQKGv7GE77xOjq__M52irZk2hMathLgutQIxF1HuVzp57-XTfitx6rIOsKKaZ4WDu6cyMC7lXvbGML55OHXIgeO");'></div>
+<div class="flex-1 p-6 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-xl font-bold mb-2 text-black">The Grand Imperial</h3>
+<div class="flex items-center gap-1 text-[var(--primary-color)]">
+<span class="font-bold text-black">4.8</span>
+<span class="material-symbols-outlined text-lg">star</span>
+</div>
+</div>
+<p class="text-[var(--text-secondary)] text-sm mb-4">Luxury Hotel · 5 stars · 1.5 km from center</p>
+<p class="text-sm leading-relaxed mb-4 text-gray-700">Experience unparalleled luxury in the heart of Mumbai with breathtaking views and world-class amenities.</p>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<p class="text-sm text-[var(--text-secondary)]">Starting from</p>
+<p class="text-2xl font-bold text-[var(--primary-color)]">$450<span class="text-sm font-normal text-[var(--text-secondary)]">/night</span></p>
+</div>
+<button class="btn-primary">View Details</button>
+</div>
+</div>
+</div>
+<div class="card flex flex-col md:flex-row items-stretch bg-white border border-gray-200 rounded-2xl overflow-hidden">
+<div class="md:w-1/3 w-full h-64 md:h-auto bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBgATOQt7Xeoa38t8we-fhrQqmh-joTV6aY17i8Gr8Rvqe_AAIfl3fSdtAOrg0mOSWMIFV-b6CUZg80DgX3rL0ASNaGlmGIfV_S1L-kJwo0oPcOfmdx7W8ZLqlUkXkv4xS8S8Z7Gi-Kq9Qsv4vaGyOy1tSMwSRXt-wT_q7jbDxpS8qtG-4CE6PVZ2DtbaqOq3XXP983QbaMWgGrMAkGGfyTs3upgThQK1W88Kby_VuDFEnlU5UlSQX1oKJFmjzRbUG3mNAhkFFZJ70S");'></div>
+<div class="flex-1 p-6 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-xl font-bold mb-2 text-black">The Urban Retreat</h3>
+<div class="flex items-center gap-1 text-[var(--primary-color)]">
+<span class="font-bold text-black">4.5</span>
+<span class="material-symbols-outlined text-lg">star</span>
+</div>
+</div>
+<p class="text-[var(--text-secondary)] text-sm mb-4">Boutique Hotel · 4 stars · 2 km from center</p>
+<p class="text-sm leading-relaxed mb-4 text-gray-700">A stylish boutique hotel offering a unique blend of comfort and sophistication, perfect for discerning travelers.</p>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<p class="text-sm text-[var(--text-secondary)]">Starting from</p>
+<p class="text-2xl font-bold text-[var(--primary-color)]">$280<span class="text-sm font-normal text-[var(--text-secondary)]">/night</span></p>
+</div>
+<button class="btn-primary">View Details</button>
+</div>
+</div>
+</div>
+<div class="card flex flex-col md:flex-row items-stretch bg-white border border-gray-200 rounded-2xl overflow-hidden">
+<div class="md:w-1/3 w-full h-64 md:h-auto bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCPaoLvairVtu3KsimxQCK8VIMgeUe6OIg1gxcBi-C1GvCafLA6rFLwjaXCitwXzsb_jLlA2XmjeaqxOmVXG7xaH0_au8k6wmckbj6LLSBvPDdLV2kOp7ouHhlkcMU5NFbxOK6xgZkGd3pnj80_h4bvbkpQjRNPjvcGJ8xRsJya9tlHk3jAjKV43hjDsUjPy5O48xRw9rsCgQ-DVuLTciDPoRrxF1unHqd8c1CWnTBbZjOEQGrSjafZkmnchR30WqTKM-Xf6AiLEVEk");'></div>
+<div class="flex-1 p-6 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-xl font-bold mb-2 text-black">The Corporate Hub</h3>
+<div class="flex items-center gap-1 text-[var(--primary-color)]">
+<span class="font-bold text-black">4.6</span>
+<span class="material-symbols-outlined text-lg">star</span>
+</div>
+</div>
+<p class="text-[var(--text-secondary)] text-sm mb-4">Business Hotel · 4 stars · 3 km from center</p>
+<p class="text-sm leading-relaxed mb-4 text-gray-700">Ideal for business travelers, this hotel provides modern facilities, efficient service, and a convenient location.</p>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<p class="text-sm text-[var(--text-secondary)]">Starting from</p>
+<p class="text-2xl font-bold text-[var(--primary-color)]">$320<span class="text-sm font-normal text-[var(--text-secondary)]">/night</span></p>
+</div>
+<button class="btn-primary">View Details</button>
+</div>
+</div>
+</div>
+<div class="card flex flex-col md:flex-row items-stretch bg-white border border-gray-200 rounded-2xl overflow-hidden">
+<div class="md:w-1/3 w-full h-64 md:h-auto bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDvo871W5tf9yKSZSyaA1WIagkEutW6enJShrVydZksaGMAIA6UpJ8-W4UjJkC9urxNbEFQPifhG-uCic-PaSWZxWGs0i0YT8zf3LQIVRb1y3TVhyiAOBdqbbygxSB6rLGCJnNsvSm4Y79wM_05_7xeNSsoa_2MHgahkierzuTdDYD2riQomvIsMfVLWnuY7Z7xPj8l6juCwX-dx-GAgQGf0DMAWe_shv7hABqAJcmLbjVsFCkCRnHEnneNdJWA978IAFfVALQINxwR");'></div>
+<div class="flex-1 p-6 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h3 class="text-xl font-bold mb-2 text-black">The Coastal Paradise</h3>
+<div class="flex items-center gap-1 text-[var(--primary-color)]">
+<span class="font-bold text-black">4.9</span>
+<span class="material-symbols-outlined text-lg">star</span>
+</div>
+</div>
+<p class="text-[var(--text-secondary)] text-sm mb-4">Resort · 5 stars · 10 km from center</p>
+<p class="text-sm leading-relaxed mb-4 text-gray-700">Escape to a serene coastal resort offering stunning ocean views, private beaches, and a range of recreational activities.</p>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<p class="text-sm text-[var(--text-secondary)]">Starting from</p>
+<p class="text-2xl font-bold text-[var(--primary-color)]">$550<span class="text-sm font-normal text-[var(--text-secondary)]">/night</span></p>
+</div>
+<button class="btn-primary">View Details</button>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-center pt-8">
+<nav class="flex items-center gap-2">
+<a class="flex h-10 w-10 items-center justify-center rounded-full text-[var(--text-secondary)] hover:bg-gray-100 hover:text-black transition-colors" href="#">
+<span class="material-symbols-outlined"> chevron_left </span>
+</a>
+<a class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--primary-color)] text-white font-bold" href="#">1</a>
+<a class="flex h-10 w-10 items-center justify-center rounded-full text-[var(--text-secondary)] hover:bg-gray-100 hover:text-black transition-colors" href="#">2</a>
+<a class="flex h-10 w-10 items-center justify-center rounded-full text-[var(--text-secondary)] hover:bg-gray-100 hover:text-black transition-colors" href="#">3</a>
+<a class="flex h-10 w-10 items-center justify-center rounded-full text-[var(--text-secondary)] hover:bg-gray-100 hover:text-black transition-colors" href="#">4</a>
+<a class="flex h-10 w-10 items-center justify-center rounded-full text-[var(--text-secondary)] hover:bg-gray-100 hover:text-black transition-colors" href="#">5</a>
+<a class="flex h-10 w-10 items-center justify-center rounded-full text-[var(--text-secondary)] hover:bg-gray-100 hover:text-black transition-colors" href="#">
+<span class="material-symbols-outlined"> chevron_right </span>
+</a>
+</nav>
+</div>
 </div>
 </div>
 </main>
-<footer class="bg-black text-white mt-10">
-<nav class="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-8 pt-8">
-<a class="text-gray-400 hover:text-[var(--primary-color)]" href="index.html">Home</a>
-<a class="text-gray-400 hover:text-[var(--primary-color)]" href="destinations.html">Destinations</a>
-<a class="text-gray-400 hover:text-[var(--primary-color)]" href="flights.html">Flights</a>
-<a class="text-gray-400 hover:text-[var(--primary-color)]" href="hotels.html">Hotels</a>
-<a class="text-gray-400 hover:text-[var(--primary-color)]" href="booking.html">Booking</a>
-<a class="text-gray-400 hover:text-[var(--primary-color)]" href="aboutus.html">About Us</a>
-</nav>
-<p class="text-sm text-gray-500 pb-8">© 2024 Nikhar Travels. All rights reserved.</p>
-</footer>
 </div>
-</body>
-</html>
+</body></html>
