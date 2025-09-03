@@ -1,0 +1,57 @@
+<!-- Flights page with navigation -->
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<title>Nikhar Travels - Flight Search Results</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+    :root {
+      --primary-color: #f97316;--secondary-color: #f3f4f6;--background-color: #ffffff;--text-primary: #1a1a1a;--text-secondary: #6b7280;--accent-color: #e65c00;}
+    body {
+      font-family: 'Spline Sans', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-primary);
+    }
+    .nav-link {
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--primary-color);
+      background: var(--secondary-color)/10;
+    }
+    .group:hover .group-hover\:block {
+      display: block;
+    }
+    .group:hover .group-hover\:opacity-100 {
+      opacity: 1;
+    }
+    input[type="radio"]:checked {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+    input[type="checkbox"]:checked {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+    .range-lg::-webkit-slider-thumb {
+        background: var(--primary-color);
+    }
+    .range-lg::-moz-range-thumb {
+        background: var(--primary-color);
+    }
+  </style>
+</head>
+<body class="bg-[var(--background-color)] text-[var(--text-primary)]">
+<div class="relative flex size-full min-h-screen flex-col overflow-x-hidden">
+<div class="flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--secondary-color)] px-10 py-4 shadow-sm">
+<div class="flex items-center gap-10">
+<div class="flex items-center gap-3">
+<div class="size-6 text-[var(--primary-color)]">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000

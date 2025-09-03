@@ -1,0 +1,90 @@
+<!-- Destinations page with navigation -->
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nikhar Travels - Top Destinations</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+    :root {
+      --primary-color: #F97316;--secondary-color: #1A1A1A;--background-color: #FFFFFF;--text-primary: #000000;--text-secondary: #4B5563;--accent-color: #EA580C;}
+    body {
+      font-family: 'Spline Sans', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-primary);
+    }
+    .nav-link {
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--primary-color);
+      background: var(--secondary-color)/10;
+    }
+    .group .group-hover\:block {
+      display: none;
+    }
+    .group:hover .group-hover\:block {
+      display: block;
+    }
+    .card-hover-effect {
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    .card-hover-effect:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
+  </style>
+</head>
+<body class="bg-[var(--background-color)] text-[var(--text-primary)]">
+<div class="relative flex size-full min-h-screen flex-col overflow-x-hidden">
+<div class="flex h-full grow flex-col">
+<header class="sticky top-0 z-50 bg-[var(--background-color)]/80 backdrop-blur-sm">
+<div class="container mx-auto flex items-center justify-between whitespace-nowrap px-10 py-4">
+<div class="flex items-center gap-4">
+<svg class="size-6 text-[var(--primary-color)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
+</svg>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">Nikhar Travels</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="nav-link" href="index.html">Home</a>
+<a class="nav-link" href="flights.html">Flights</a>
+<a class="nav-link" href="hotels.html">Hotels</a>
+<a class="nav-link active" href="destinations.html">Destinations</a>
+<a class="nav-link" href="booking.html">Booking</a>
+<a class="nav-link" href="aboutus.html">About Us</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-[var(--primary-color)] text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors hover:bg-[var(--accent-color)]">
+<span class="truncate">Book Now</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<!-- ... rest of your existing page ... -->
+<!-- (Content unchanged, navigation links added above) -->
+<!-- Your original page content goes here -->
+<!-- ... -->
+</main>
+<footer class="bg-black text-white">
+<div class="container mx-auto px-5 py-10">
+<nav class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 mb-8">
+<a class="text-gray-400 text-base font-normal leading-normal transition-colors hover:text-[var(--primary-color)]" href="index.html">Home</a>
+<a class="text-gray-400 text-base font-normal leading-normal transition-colors hover:text-[var(--primary-color)]" href="destinations.html">Destinations</a>
+<a class="text-gray-400 text-base font-normal leading-normal transition-colors hover:text-[var(--primary-color)]" href="flights.html">Flights</a>
+<a class="text-gray-400 text-base font-normal leading-normal transition-colors hover:text-[var(--primary-color)]" href="hotels.html">Hotels</a>
+<a class="text-gray-400 text-base font-normal leading-normal transition-colors hover:text-[var(--primary-color)]" href="booking.html">Booking</a>
+<a class="text-gray-400 text-base font-normal leading-normal transition-colors hover:text-[var(--primary-color)]" href="aboutus.html">About Us</a>
+</nav>
+<p class="text-gray-400 text-sm font-normal leading-normal">© 2024 Nikhar Travels. All rights reserved.</p>
+</div>
+</footer>
+</div>
+</div>
+</body></html>
