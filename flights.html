@@ -1,31 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <title>Nikhar Travels - Flight Search Results</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com" rel="preconnect"/>
-  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-  <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
-  <style type="text/tailwindcss">
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<title>Nikhar Travels - Flight Search Results</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
     :root {
-      --primary-color: #f97316;--secondary-color: #f3f4f6;--background-color: #ffffff;--text-primary: #1a1a1a;--text-secondary: #6b7280;--accent-color: #e65c00;
-    }
+      --primary-color: #f97316;--secondary-color: #f3f4f6;--background-color: #ffffff;--text-primary: #1a1a1a;--text-secondary: #6b7280;--accent-color: #e65c00;}
     body {
       font-family: 'Spline Sans', sans-serif;
       background-color: var(--background-color);
       color: var(--text-primary);
     }
-    .nav-link {
-      padding: 0.5rem 1rem;
-      border-radius: 9999px;
-      transition: background 0.2s, color 0.2s;
+    .group:hover .group-hover\:block {
+      display: block;
     }
-    .nav-link:hover, .nav-link.active {
-      color: var(--primary-color);
-      background: var(--secondary-color)/10;
+    .group:hover .group-hover\:opacity-100 {
+      opacity: 1;
+    }
+    input[type="radio"]:checked {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+    input[type="checkbox"]:checked {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+    .range-lg::-webkit-slider-thumb {
+        background: var(--primary-color);
+    }
+    .range-lg::-moz-range-thumb {
+        background: var(--primary-color);
     }
   </style>
 </head>
@@ -43,30 +51,166 @@
 <h2 class="text-xl font-bold leading-tight tracking-[-0.015em] text-[var(--text-primary)]">Nikhar Travels</h2>
 </div>
 <nav class="flex items-center gap-8">
-<a class="nav-link" href="index.html">Home</a>
-<a class="nav-link active" href="flights.html">Flights</a>
-<a class="nav-link" href="hotels.html">Hotels</a>
-<a class="nav-link" href="destinations.html">Destinations</a>
-<a class="nav-link" href="booking.html">Booking</a>
-<a class="nav-link" href="aboutus.html">About Us</a>
+<a class="text-[var(--text-primary)] text-base font-medium leading-normal hover:text-[var(--primary-color)] transition-colors duration-300" href="#">Flights</a>
+<a class="text-[var(--text-primary)] text-base font-medium leading-normal hover:text-[var(--primary-color)] transition-colors duration-300" href="#">Hotels</a>
+<a class="text-[var(--text-primary)] text-base font-medium leading-normal hover:text-[var(--primary-color)] transition-colors duration-300" href="#">Packages</a>
+<a class="text-[var(--text-primary)] text-base font-medium leading-normal hover:text-[var(--primary-color)] transition-colors duration-300" href="#">Activities</a>
+<a class="text-[var(--text-primary)] text-base font-medium leading-normal hover:text-[var(--primary-color)] transition-colors duration-300" href="#">Cruises</a>
 </nav>
+</div>
+<div class="flex flex-1 justify-end items-center gap-6">
+<label class="relative flex-col min-w-40 max-w-64">
+<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-[var(--text-secondary)]">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+</div>
+<input class="form-input w-full min-w-0 flex-1 resize-none overflow-hidden rounded-full text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] border-none bg-[var(--secondary-color)] h-10 placeholder:text-[var(--text-secondary)] pl-10 pr-4 text-base font-normal leading-normal" placeholder="Search" value=""/>
+</label>
+<button class="flex items-center justify-center rounded-full h-10 w-10 bg-[var(--secondary-color)] text-[var(--text-primary)] hover:bg-[var(--primary-color)] hover:text-white transition-colors duration-300">
+<div class="size-5">
+<svg fill="currentColor" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM101.63,168h52.74C149,186.34,140,202.87,128,215.89,116,202.87,107,186.34,101.63,168ZM98,152a145.72,145.72,0,0,1,0-48h60a145.72,145.72,0,0,1,0,48ZM40,128a87.61,87.61,0,0,1,3.33-24H81.79a161.79,161.79,0,0,0,0,48H43.33A87.61,87.61,0,0,1,40,128ZM154.37,88H101.63C107,69.66,116,53.13,128,40.11,140,53.13,149,69.66,154.37,88Zm19.84,16h38.46a88.15,88.15,0,0,1,0,48H174.21a161.79,161.79,0,0,0,0-48Zm32.16-16H170.94a142.39,142.39,0,0,0-20.26-45A88.37,88.37,0,0,1,206.37,88ZM105.32,43A142.39,142.39,0,0,0,85.06,88H49.63A88.37,88.37,0,0,1,105.32,43ZM49.63,168H85.06a142.39,142.39,0,0,0,20.26,45A88.37,88.37,0,0,1,49.63,168Zm101.05,45a142.39,142.39,0,0,0,20.26-45h35.43A88.37,88.37,0,0,1,150.68,213Z"></path></svg>
+</div>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAyQ6QocsNSgb1G_-FW9XJr_KN97BOX37CrRDuMyfWlKgDXv-ehtxl_7dVa8tTw8DGicvnUkEd1BNlPBUqbizcdBVzfS2sEdqdSlzPlasZiVWYUsyJvXr4jh0_f9ZUowo33o5SD1Z2ZgB6c67HmdEzaVxZaiCaPGJvWYH9bngUm06whpmOxFoE791u_P5Pj7wMcjUmBWS9lml-2gfYQG5qRs6qNj_cVONAbc2wNPkMdXZtP0FcCrW8sEH3RTn8tzOUO1fvlZkdnqnMs");'></div>
 </div>
 </header>
 <main class="grid grid-cols-12 gap-8 px-10 py-8">
-<!-- Your flight search content here (the body stays as in your original file) -->
+<aside class="col-span-3">
+<div class="bg-white rounded-2xl p-6 sticky top-8 shadow-sm border border-gray-100">
+<h3 class="text-2xl font-bold mb-6 text-[var(--text-primary)]">Filters</h3>
+<div class="space-y-6">
+<div>
+<h4 class="text-lg font-semibold mb-4 text-[var(--text-primary)]">Stops</h4>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer"><input checked="" class="h-5 w-5 border-2 border-gray-300 bg-transparent text-[var(--primary-color)] focus:ring-0 focus:ring-offset-0" name="stops" type="radio"/><span class="text-[var(--text-secondary)]">Nonstop</span></label>
+<label class="flex items-center gap-3 cursor-pointer"><input class="h-5 w-5 border-2 border-gray-300 bg-transparent text-[var(--primary-color)] focus:ring-0 focus:ring-offset-0" name="stops" type="radio"/><span class="text-[var(--text-secondary)]">1 stop</span></label>
+<label class="flex items-center gap-3 cursor-pointer"><input class="h-5 w-5 border-2 border-gray-300 bg-transparent text-[var(--primary-color)] focus:ring-0 focus:ring-offset-0" name="stops" type="radio"/><span class="text-[var(--text-secondary)]">2+ stops</span></label>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4 text-[var(--text-primary)]">Airlines</h4>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer"><input class="h-5 w-5 rounded border-gray-300 bg-transparent text-[var(--primary-color)] focus:ring-0 focus:ring-offset-0" type="checkbox"/><span class="text-[var(--text-secondary)]">Air India</span></label>
+<label class="flex items-center gap-3 cursor-pointer"><input class="h-5 w-5 rounded border-gray-300 bg-transparent text-[var(--primary-color)] focus:ring-0 focus:ring-offset-0" type="checkbox"/><span class="text-[var(--text-secondary)]">IndiGo</span></label>
+<label class="flex items-center gap-3 cursor-pointer"><input class="h-5 w-5 rounded border-gray-300 bg-transparent text-[var(--primary-color)] focus:ring-0 focus:ring-offset-0" type="checkbox"/><span class="text-[var(--text-secondary)]">SpiceJet</span></label>
+<label class="flex items-center gap-3 cursor-pointer"><input class="h-5 w-5 rounded border-gray-300 bg-transparent text-[var(--primary-color)] focus:ring-0 focus:ring-offset-0" type="checkbox"/><span class="text-[var(--text-secondary)]">Vistara</span></label>
+<label class="flex items-center gap-3 cursor-pointer"><input class="h-5 w-5 rounded border-gray-300 bg-transparent text-[var(--primary-color)] focus:ring-0 focus:ring-offset-0" type="checkbox"/><span class="text-[var(--text-secondary)]">Go First</span></label>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4 text-[var(--text-primary)]">Departure Time</h4>
+<div class="grid grid-cols-2 gap-3">
+<label class="flex items-center justify-center p-3 rounded-lg border border-gray-300 cursor-pointer has-[:checked]:bg-[var(--primary-color)] has-[:checked]:text-white has-[:checked]:border-[var(--primary-color)] transition-colors duration-300 text-gray-500"><input checked="" class="sr-only" name="departure" type="radio"/><span class="text-sm font-medium">Anytime</span></label>
+<label class="flex items-center justify-center p-3 rounded-lg border border-gray-300 cursor-pointer has-[:checked]:bg-[var(--primary-color)] has-[:checked]:text-white has-[:checked]:border-[var(--primary-color)] transition-colors duration-300 text-gray-500"><input class="sr-only" name="departure" type="radio"/><span class="text-sm font-medium">Morning</span></label>
+<label class="flex items-center justify-center p-3 rounded-lg border border-gray-300 cursor-pointer has-[:checked]:bg-[var(--primary-color)] has-[:checked]:text-white has-[:checked]:border-[var(--primary-color)] transition-colors duration-300 text-gray-500"><input class="sr-only" name="departure" type="radio"/><span class="text-sm font-medium">Afternoon</span></label>
+<label class="flex items-center justify-center p-3 rounded-lg border border-gray-300 cursor-pointer has-[:checked]:bg-[var(--primary-color)] has-[:checked]:text-white has-[:checked]:border-[var(--primary-color)] transition-colors duration-300 text-gray-500"><input class="sr-only" name="departure" type="radio"/><span class="text-sm font-medium">Evening</span></label>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-4 text-[var(--text-primary)]">Price Range</h4>
+<div class="relative pt-1">
+<input class="w-full h-2 bg-[var(--secondary-color)] rounded-lg appearance-none cursor-pointer range-lg" max="1000" min="100" step="10" type="range"/>
+<div class="flex justify-between text-xs text-[var(--text-secondary)] mt-2">
+<span>₹100</span>
+<span>₹1000</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</aside>
 <section class="col-span-9">
 <div class="flex items-center gap-2 text-sm text-[var(--text-secondary)] mb-4">
-<a class="hover:text-[var(--primary-color)]" href="flights.html">Flights</a>
+<a class="hover:text-[var(--primary-color)]" href="#">Flights</a>
 <span>/</span>
 <a class="hover:text-[var(--primary-color)]" href="#">Delhi to Mumbai</a>
 <span>/</span>
 <span class="text-[var(--text-primary)]">2024-07-20</span>
 </div>
 <h1 class="text-4xl font-extrabold text-[var(--text-primary)] mb-6">Flights from Delhi to Mumbai</h1>
-<!-- ... rest of your page ... -->
+<div class="flex items-center gap-4 bg-[var(--secondary-color)] p-4 rounded-2xl mb-8">
+<input class="bg-white border border-gray-300 text-[var(--text-primary)] rounded-full py-3 px-4 focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] focus:border-transparent flex-1" placeholder="Delhi (DEL)" type="text"/>
+<input class="bg-white border border-gray-300 text-[var(--text-primary)] rounded-full py-3 px-4 focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] focus:border-transparent flex-1" placeholder="Mumbai (BOM)" type="text"/>
+<input class="bg-white border border-gray-300 text-[var(--text-primary)] rounded-full py-3 px-4 focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] focus:border-transparent" type="date" value="2024-07-20"/>
+<button class="bg-[var(--primary-color)] text-white py-3 px-6 rounded-full hover:bg-[var(--accent-color)] transition-colors duration-300 ease-in-out font-semibold">Search</button>
+</div>
+<div>
+<h2 class="text-3xl font-bold text-[var(--text-primary)] mb-6">Best Flights</h2>
+<div class="space-y-4">
+<div class="group flex items-center gap-6 p-4 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-lg hover:scale-[1.01] transition-all duration-300 ease-in-out">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4Oenb2r9fE07ItE5qD3--vo-KMBqyrYxJtagrDphQEJYqcWKedI71vsyg1olFEt1bgZcgabjXoedTNSMK-rWE_l7ULoWgZI6oLSdJnksn5KfWO5p6RT3zF4cWQaiEgW66SIGIWyDxtcndMmnhrHIyX8MXny5VKx8wzYkq7Wj_CepGNOdPk8MDk3ykmd7gXuz0OX3sou8gPW9ehNWOxjOz7vnL7MvudHLJiXD_A_7vEJYHRT0V0wzpEynZm-qQyJ2i4fHY1Pzq9opf");'></div>
+<div class="flex-[2_2_0px] flex flex-col justify-between">
+<div>
+<p class="text-xl font-bold text-[var(--text-primary)]">Air India</p>
+<p class="text-[var(--text-secondary)] mt-1">10:00 AM - 12:00 PM</p>
+<p class="text-sm text-[var(--text-secondary)]">Nonstop</p>
+</div>
+<div class="flex items-baseline gap-4 mt-4">
+<p class="text-2xl font-bold text-[var(--primary-color)]">₹4,500</p>
+<button class="bg-[var(--primary-color)] text-white py-2 px-5 rounded-full hover:bg-[var(--accent-color)] transition-colors duration-300 ease-in-out font-semibold opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0">Select</button>
+</div>
+</div>
+</div>
+<div class="group flex items-center gap-6 p-4 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-lg hover:scale-[1.01] transition-all duration-300 ease-in-out">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAs7rN4n5laKsar5aJwObE63VEnZjqAzuoHDbn1tjaBXxn4DfuN_reqbp21YKLTm8VQUHLIS7bTYiDEKlsLzpg7m-2RA2rcjETNE3eKvs0KAUzHW0sTXldOqI5uvNsdOfAvbOibhqVsnVQVsB6wRvOb1HtliJZdYFVwNDktknx8_Xq0WXg426rxwcz9WMntLSCvLtdAQCQ0m1MIQWlP_0iQFcXYt1p_ryKVYRdEpfU9picyPqX1k0OJF-SkPVpg9TZa-kdUhQ2WhJ8E");'></div>
+<div class="flex-[2_2_0px] flex flex-col justify-between">
+<div>
+<p class="text-xl font-bold text-[var(--text-primary)]">IndiGo</p>
+<p class="text-[var(--text-secondary)] mt-1">11:00 AM - 1:00 PM</p>
+<p class="text-sm text-[var(--text-secondary)]">Nonstop</p>
+</div>
+<div class="flex items-baseline gap-4 mt-4">
+<p class="text-2xl font-bold text-[var(--primary-color)]">₹4,800</p>
+<button class="bg-[var(--primary-color)] text-white py-2 px-5 rounded-full hover:bg-[var(--accent-color)] transition-colors duration-300 ease-in-out font-semibold opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0">Select</button>
+</div>
+</div>
+</div>
+<div class="group flex items-center gap-6 p-4 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-lg hover:scale-[1.01] transition-all duration-300 ease-in-out">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD35NujWdYeEDm-CWkmpXsCY5yneY5o8NpPDK-8XV238c2NQ1jKN-CjJEYe0kNw0WoA9g7-v_9oGeFG5h_PdQvnB_cEhiEInWy7uJ96rdHDj5eOqfC8O51e0607lqpIHdRZnq5I_jbqAJVzccoEggH17fxxNNMrgkuR5ZoxVgZ9TR2Gfjt8HMLUBRPjWXB2uaRvf1nBS2g_9nrQhefmp4XZgRC0IUxJjIjlfENPaeGQxdlLbmuJHVcwx1LquuQHcPE8A_yX4ADHnOun");'></div>
+<div class="flex-[2_2_0px] flex flex-col justify-between">
+<div>
+<p class="text-xl font-bold text-[var(--text-primary)]">SpiceJet</p>
+<p class="text-[var(--text-secondary)] mt-1">12:00 PM - 2:00 PM</p>
+<p class="text-sm text-[var(--text-secondary)]">Nonstop</p>
+</div>
+<div class="flex items-baseline gap-4 mt-4">
+<p class="text-2xl font-bold text-[var(--primary-color)]">₹4,200</p>
+<button class="bg-[var(--primary-color)] text-white py-2 px-5 rounded-full hover:bg-[var(--accent-color)] transition-colors duration-300 ease-in-out font-semibold opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0">Select</button>
+</div>
+</div>
+</div>
+<div class="group flex items-center gap-6 p-4 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-lg hover:scale-[1.01] transition-all duration-300 ease-in-out">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuALy8okaZH1rAp4OXHHupd1D_8oRowvDLgpTkhqktl1TtdWosZ_rdWEiAvy4lTQgeOoSUD14qmBcB3f0FcMPdY02Br8hPhGG8DY17IX7JSMjFXRKH5XFqxq_lqJiZmm_wXzP_03I4bwkz85WS-XSk0A6WFvQ-V97Y7XXP0GpBFaeoyzu5hwuQvxDXiaFvqQg7C0qwATTR1tc57d94z6ZCzNBnwr0FwcXAEj_O7PI443U7K-mmrmeEQS3eu7LM7D-YdLzgdF7s2ZJWJ0");'></div>
+<div class="flex-[2_2_0px] flex flex-col justify-between">
+<div>
+<p class="text-xl font-bold text-[var(--text-primary)]">Vistara</p>
+<p class="text-[var(--text-secondary)] mt-1">1:00 PM - 3:00 PM</p>
+<p class="text-sm text-[var(--text-secondary)]">Nonstop</p>
+</div>
+<div class="flex items-baseline gap-4 mt-4">
+<p class="text-2xl font-bold text-[var(--primary-color)]">₹5,500</p>
+<button class="bg-[var(--primary-color)] text-white py-2 px-5 rounded-full hover:bg-[var(--accent-color)] transition-colors duration-300 ease-in-out font-semibold opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0">Select</button>
+</div>
+</div>
+</div>
+<div class="group flex items-center gap-6 p-4 bg-white border border-gray-100 rounded-2xl shadow-sm hover:shadow-lg hover:scale-[1.01] transition-all duration-300 ease-in-out">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDOc1yJv0wDUGnco7oB8Yt7BxP0yMWtEVtvU8LZn4MAKa19t9GalP8eRTn-ozczt25tE15hdQsxPyC5iv_3sZSS06VI5d6H3x5VogULTjgxOfLGXfLho8ojgD4trq6BLkSRPAsordSoh7jmgg25YOzpRHxpKPwtW7-qegGFZ0gbjnheOQ9H8RLIh_1rdG7k3iExT9zVcCKDI9cOwdgRQnUAQxJ8eBN3dlpjoVHSm0l_AGZGhYKCKvN-jGmblCdIZYE5jOwlvk3rQ9Xr");'></div>
+<div class="flex-[2_2_0px] flex flex-col justify-between">
+<div>
+<p class="text-xl font-bold text-[var(--text-primary)]">Go First</p>
+<p class="text-[var(--text-secondary)] mt-1">2:00 PM - 4:00 PM</p>
+<p class="text-sm text-[var(--text-secondary)]">Nonstop</p>
+</div>
+<div class="flex items-baseline gap-4 mt-4">
+<p class="text-2xl font-bold text-[var(--primary-color)]">₹4,000</p>
+<button class="bg-[var(--primary-color)] text-white py-2 px-5 rounded-full hover:bg-[var(--accent-color)] transition-colors duration-300 ease-in-out font-semibold opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0">Select</button>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 </main>
 </div>
 </div>
-</body>
-</html>
+
+</body></html>
